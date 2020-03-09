@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "system.session",
+      "type": "com.nap.up.common.standard.session.SessionConfig",
+      "sourceType": "com.nap.up.common.standard.session.SessionConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "system.session.type",
+      "type": "java.lang.String",
+      "sourceType": "com.nap.up.common.standard.session.SessionConfig"
+    }
+  ],
+  "hints": []
+}

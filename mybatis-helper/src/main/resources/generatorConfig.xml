@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables"  targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://47.111.168.175:3306/kc_tiku?useUnicode=true&amp;useSSL=false&amp;serverTimezone=GMT%2B8" userId="kc_tiku" password="kc_tiku">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.wzd.tk.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="main.resources.mapper" targetProject="src">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wzd.tk.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+        <table tableName="classification" domainObjectName="Classification" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="answer" domainObjectName="Answer" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="answer_record" domainObjectName="AnswerRecord" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="comment" domainObjectName="Comment" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="comment_guest" domainObjectName="CommentGuest" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="item_bank" domainObjectName="ItemBank" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+            <columnOverride column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="analysis" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="subject_point" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="answer_context" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="item_right" domainObjectName="ItemRight" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="item_type" domainObjectName="ItemType" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="item_wrong" domainObjectName="ItemWrong" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="knowledge" domainObjectName="Knowledge" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="knowledge_item" domainObjectName="KnowledgeItem" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="knowledge_right" domainObjectName="KnowledgeRight" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="knowledge_Wrong" domainObjectName="KnowledgeWrong" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="match" domainObjectName="Match" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+            <columnOverride column="content" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="gift" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="match_pay" domainObjectName="MatchPay" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="moudle_order" domainObjectName="MoudleOrder" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="paper" domainObjectName="Paper" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="paper_item" domainObjectName="PaperItem" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="paper_match" domainObjectName="PaperMatch" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="paper_result" domainObjectName="PaperResult" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="popup" domainObjectName="Popup" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="temp_button" domainObjectName="TempButton" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="temp_menu" domainObjectName="TempMenu" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="temp_moudle" domainObjectName="TempMoudle" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="user_classification_record" domainObjectName="UserClassificationRecord" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="user_collection_item_bank" domainObjectName="UserCollectionItemBank" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+        <table tableName="user_moudle_recharge" domainObjectName="UserMoudleRecharge" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false" />
+    </context>
+</generatorConfiguration>
