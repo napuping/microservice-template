@@ -2,18 +2,17 @@ package com.nap.up.common.helper;
 
 import com.github.pagehelper.PageInfo;
 import com.nap.up.common.standard.jpa.JpaCondition;
-import com.nap.up.common.standard.jpa.JpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
-import java.util.function.Function;
 
 /**
  * @creator napuping
@@ -23,9 +22,9 @@ import java.util.function.Function;
 public class PageHelper extends com.github.pagehelper.PageHelper {
 
     //针对jpa的分页查询
-    public static <T> PageInfo<T> jpaStart(int pageNum, int pageSize, JpaRepository jpaRepository, JpaCondition condition) {
+    public static <T> PageInfo<T> jpaStart(int pageNum, int pageSize, JpaSpecificationExecutor jpaSpecificationExecutor, JpaCondition condition) {
         Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
-        Page<T> page = jpaRepository.findAll(new Specification() {
+        Page<T> page = jpaSpecificationExecutor.findAll(new Specification() {
             public Predicate toPredicate(Root root, CriteriaQuery query, CriteriaBuilder criteriaBuilder) {
                 List<Predicate> predicates = condition.build(root, criteriaBuilder);
                 Predicate[] p = new Predicate[predicates.size()];
