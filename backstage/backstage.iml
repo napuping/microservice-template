@@ -26,6 +26,7 @@
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="pom" />
+    <orderEntry type="module" module-name="pom" />
     <orderEntry type="module" module-name="common" />
     <orderEntry type="module" module-name="mapper" />
     <orderEntry type="module" module-name="pom" />

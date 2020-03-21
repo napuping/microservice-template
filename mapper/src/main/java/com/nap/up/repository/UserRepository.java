@@ -10,5 +10,4 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @description
  */
 public interface UserRepository extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {
-
 }
